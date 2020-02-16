@@ -11,4 +11,4 @@ let isPrime = (number) => {
 			return number + " - простое число.";
 	}
 };
-console.log(isPrime(number));
+console.log(isPrime(23));

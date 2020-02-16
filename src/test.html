@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <meta charset="UTF-8">
+    <title>Test Mocha</title>
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+</head>
+<body>
+<!-- в элементе с id="mocha" будут результаты тестов -->
+<div id="mocha"></div>
+<!-- запустить тесты! -->
+<script src="./ifElse/task1.js"></script>
+<script src="./ifElse/task2.js"></script>
+<script src="./ifElse/task3.js"></script>
+<script src="./ifElse/task4.js"></script>
+<script src="./ifElse/task5.js"></script>
+<script src="./loops/task1.js"></script>
+<script src="./loops/task2.js"></script>
+<script src="./loops/task3.js"></script>
+<script src="./loops/task4.js"></script>
+<script src="./loops/task5.js"></script>
+<script src="./loops/task6.js"></script>
+<script src="./arrays/task1.js"></script>
+<script src="./arrays/task2.js"></script>
+<script src="./arrays/task3.js"></script>
+<script src="./arrays/task4.js"></script>
+<script src="./arrays/task5.js"></script>
+<script src="./arrays/task6.js"></script>
+<script src="./arrays/task7.js"></script>
+<script src="./arrays/task8.js"></script>
+<script src="./arrays/task9.js"></script>
+<script src="./arrays/task10.js"></script>
+<script src="./functions/task1.js"></script>
+<script src="./functions/task2.js"></script>
+<script src="./functions/task3.js"></script>
+<script src="./functions/task4.js"></script>
+<script src="./functions/task5.js"></script>
+<script src="./functions/task6.js"></script>
+<script>
+    describe("c", function() {
+        it("pass a = 6, b = 10", function () {
+            assert.equal(c(6, 10), 60);
+        });
+        it("pass a = 5, b = 10", function () {
+            assert.equal(c(5, 10), 15);
+        });
+    });
+    describe("whichQuarter", function() {
+        it("pass x = 0, y = 0", function () {
+            assert.equal(whichQuarter(0, 0), "Точка находится в начале координат.");
+        });
+        it("pass x = 0, y = 49", function () {
+            assert.equal(whichQuarter(0, 49), "Точка находится на оси 'x'.");
+        });
+        it("pass x = 105, y = 0", function () {
+            assert.equal(whichQuarter(105, 0), "Точка находится на оси 'y'.");
+        });
+        it("pass x = 105, y = 63", function () {
+            assert.equal(whichQuarter(105, 63), "Точка находится в I четверти.");
+        });
+        it("pass x = -95, y = 16", function () {
+            assert.equal(whichQuarter(-95, 16), "Точка находится в II четверти.");
+        });
+        it("pass x = -95, y = -16", function () {
+            assert.equal(whichQuarter(-95, -16), "Точка находится в III четверти.");
+        });
+        it("pass x = 95, y = -16", function () {
+            assert.equal(whichQuarter(95, -16), "Точка находится в IV четверти.");
+        });
+    });
+    describe("sum", function() {
+        it("pass a = 3, b = 5, c = -11", function () {
+            assert.equal(sum(3, 5, -11), 8);
+        });
+        it("pass a = -3, b = -5, c = -11", function () {
+            assert.equal(sum(-3, -5, -11), "Все числа отрицательные.");
+        });
+    });
+    describe("maxValue", function() {
+        it("pass a = 3, b = 5, c = 6", function () {
+            assert.equal(maxValue(3, 5, 6), 93);
+        });
+        it("pass a = 1, b = 2, c = 3", function () {
+            assert.equal(maxValue(1, 2, 3), 9);
+        });
+    });
+    describe("mark", function() {
+        it("pass score = 155", function () {
+            assert.equal(mark(155), "Score is out of range.");
+        });
+        it("pass score = 15", function () {
+            assert.equal(mark(15), "F");
+        });
+        it("pass score = 26", function () {
+            assert.equal(mark(26), "E");
+        });
+        it("pass score = 51", function () {
+            assert.equal(mark(51), "D");
+        });
+        it("pass score = 69", function () {
+            assert.equal(mark(69), "C");
+        });
+        it("pass score = 81", function () {
+            assert.equal(mark(81), "B");
+        });
+        it("pass score = 97", function () {
+            assert.equal(mark(97), "A");
+        });
+    });
+    describe("evenNumbers", function() {
+        it("pass a = 1, b = 99", function () {
+            assert.equal(evenNumbers(1, 99), `Сумма чётных чисел в диапазоне от 1 до 99 равно: 2450, количество: 49.`);
+        });
+    });
+    describe("isPrime", function() {
+        it("pass number = 1", function () {
+            assert.equal(isPrime(1), "Число должно быть больше 1.");
+        });
+        it("pass number = 2", function () {
+            assert.equal(isPrime(2), "2 - простое число.");
+        });
+        it("pass number = 56", function () {
+            assert.equal(isPrime(56), "56 - составное число.");
+        });
+        it("pass number = 23", function () {
+            assert.equal(isPrime(23), "23 - простое число.");
+        });
+    });
+    describe("squareRoot1", function() {
+        it("pass number = word", function () {
+            assert.equal(squareRoot1("word"), "Введите число");
+        });
+        it("pass number = 0", function () {
+            assert.equal(squareRoot1(0), 0);
+        });
+        it("pass number = 1", function () {
+            assert.equal(squareRoot1(1), 1);
+        });
+        it("pass number = 169", function () {
+            assert.equal(squareRoot1(169), 13);
+        });
+        it("pass number = 65", function () {
+            assert.equal(squareRoot1(65), 8);
+        });
+    });
+    describe("squareRoot2", function() {
+        it("pass number = word", function () {
+            assert.equal(squareRoot2("word"), "Введите число");
+        });
+        it("pass number = 0", function () {
+            assert.equal(squareRoot2(0), 0);
+        });
+        it("pass number = 1", function () {
+            assert.equal(squareRoot2(1), 1);
+        });
+        it("pass number = 169", function () {
+            assert.equal(squareRoot2(169), 13);
+        });
+        it("pass number = 65", function () {
+            assert.equal(squareRoot2(65), 8);
+        });
+    });
+    describe("factorial", function() {
+        it("pass n = 10", function () {
+            assert.equal(factorial(10), 3628800);
+        });
+    });
+    describe("sum1", function() {
+        it("pass number = 64", function () {
+            assert.equal(sum1(64), 10);
+        });
+        it("pass number = five", function () {
+            assert.equal(sum1("five"), "Введите число");
+        });
+    });
+    describe("mirror", function() {
+        it("pass number = '123'", function () {
+            assert.equal(mirror('123'), "Введите число");
+        });
+        it("pass number = 123", function () {
+            assert.equal(mirror(123), 321);
+        });
+    });
+    describe("min", function() {
+        it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
+            assert.equal(min(array), -59);
+        });
+        it("array = 123", function () {
+            assert.equal(min(123), "123 не является массивом");
+        });
+    });
+    describe("max", function() {
+        it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
+            assert.equal(max(array), 345);
+        });
+        it("array = 123", function () {
+            assert.equal(max(123), "123 не является массивом");
+        });
+    });
+    describe("minIndex", function() {
+        it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
+            assert.equal(minIndex(array), 4);
+        });
+        it("array = 123", function () {
+            assert.equal(minIndex(123), "123 не является массивом");
+        });
+    });
+    describe("maxIndex", function() {
+        it("array = [1, 15]", function () {
+            assert.equal(maxIndex(array), 1);
+        });
+        it("array = 123", function () {
+            assert.equal(maxIndex(123), "123 не является массивом");
+        });
+    });
+    describe("sum2", function() {
+        it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
+            assert.equal(sum2(array), 68);
+        });
+        it("array = \"random word\"", function () {
+            assert.equal(sum2("random word"), "random word не является массивом");
+        });
+    });
+
+
+
+
+
+
+
+    describe("quantity", function() {
+        it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
+            assert.equal(quantity(array), "Количество нечетных элементов массива: 5.");
+        });
+        it("array = \"random word\"", function () {
+            assert.equal(quantity("random word"), "random word не является массивом");
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+    describe("getDay", function() {
+        it("number = -9", function () {
+            assert.equal(getDay(-9), "Номер дня введен некорректно. Попробуйте число от 1 до 7.");
+        });
+        it("number = 10", function () {
+            assert.equal(getDay(10), "Номер дня введен некорректно. Попробуйте число от 1 до 7.");
+        });
+        it("number = 5", function () {
+            assert.equal(getDay(5), "Fri");
+        });
+    });
+</script>
+<script>
+    mocha.run();
+</script>
+</body>
+</html>

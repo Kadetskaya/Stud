@@ -22,4 +22,4 @@ let mark = (score) => {
 		return "A";
     }
 };
-console.log(mark(score)); 
+console.log(mark(76));

@@ -8,4 +8,4 @@ let factorial = (n) => {
 	}
 	return result;
 };
-console.log (result); 
+console.log (factorial(10));

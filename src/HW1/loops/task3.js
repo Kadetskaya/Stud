@@ -1,6 +1,11 @@
 //последовательный подбор
-
+"use strict";
 let squareRoot1 = (number) => {
+	if (number == 0 || number == 1)
+		return number;
+	if (typeof number !== "number") {
+		return "Введите число";
+	}
 	for (let i = 1; ; i++ ) {
         if (i * i == number) {
         	return i;
@@ -10,7 +15,7 @@ let squareRoot1 = (number) => {
         }
     }
 };
-console.log(squareRoot1(number));
+console.log(squareRoot1(59));
 
 
  //метод бинарного поиска
@@ -18,6 +23,9 @@ console.log(squareRoot1(number));
 let squareRoot2 = (number) => {
 	if (number == 0 || number == 1)  
        return number;
+	if (typeof number !== "number") {
+		return "Введите число"
+	}
 	let min = 0;
 	let max = number;
     while (min <= max) {
@@ -27,11 +35,11 @@ let squareRoot2 = (number) => {
     	}
     	if (mid * mid < number) {
     		min = mid + 1;
-    		res = mid;
+    		let res = mid;
     } else {
     	max = mid - 1;
     }
     }    
     return max;
 };
-console.log(squareRoot2(number));
+console.log(squareRoot2(1));

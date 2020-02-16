@@ -20,4 +20,4 @@ let whichQuarter = (x, y) => {
 		}
 	}
 };
-console.log(whichQuarter(5, 15));
+console.log(whichQuarter(-95, 16));

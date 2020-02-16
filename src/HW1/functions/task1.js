@@ -7,4 +7,4 @@ if (number < 1 || number > days.length) {
 	return days[number - 1];
 }  
 };
-console.log(getDay(number));
+console.log(getDay(5));
