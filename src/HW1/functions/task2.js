@@ -28,4 +28,6 @@ let convert = (num) => {
   else return convert_hundreds(num);
 };
 
-console.log(convert(num)); 
+//console.log(convert(num));
+
+console.log(typeof('5'));

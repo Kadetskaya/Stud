@@ -199,7 +199,7 @@
     });
     describe("min", function() {
         it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
-            assert.equal(min(array), -59);
+            assert.equal(min([2, 4, 98, 67, -59, 6, 345, -9, 115]), -59);
         });
         it("array = 123", function () {
             assert.equal(min(123), "123 не является массивом");
@@ -207,7 +207,7 @@
     });
     describe("max", function() {
         it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
-            assert.equal(max(array), 345);
+            assert.equal(max([2, 4, 98, 67, -59, 6, 345, -9, 115]), 345);
         });
         it("array = 123", function () {
             assert.equal(max(123), "123 не является массивом");
@@ -215,15 +215,15 @@
     });
     describe("minIndex", function() {
         it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
-            assert.equal(minIndex(array), 4);
+            assert.equal(minIndex([2, 4, 98, 67, -59, 6, 345, -9, 115]), 4);
         });
         it("array = 123", function () {
             assert.equal(minIndex(123), "123 не является массивом");
         });
     });
     describe("maxIndex", function() {
-        it("array = [1, 15]", function () {
-            assert.equal(maxIndex(array), 1);
+        it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
+            assert.equal(maxIndex([2, 4, 98, 67, -59, 6, 345, -9, 115]), 6);
         });
         it("array = 123", function () {
             assert.equal(maxIndex(123), "123 не является массивом");
@@ -231,27 +231,37 @@
     });
     describe("sum2", function() {
         it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
-            assert.equal(sum2(array), 68);
+            assert.equal(sum2([2, 4, 98, 67, -59, 6, 345, -9, 115]), 68);
         });
         it("array = \"random word\"", function () {
             assert.equal(sum2("random word"), "random word не является массивом");
         });
     });
-
-
-
-
-
-
-
+    describe("reverseArray", function() {
+        it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
+            assert.deepEqual(reverseArray([2, 4, 98, 67, -59, 6, 345, -9, 115]), [115, -9, 345, 6, -59, 67, 98, 4, 2]);
+        });
+        it("array = \"random word\"", function () {
+            assert.equal(reverseArray("random word"), "random word не является массивом");
+        });
+    });
     describe("quantity", function() {
         it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
-            assert.equal(quantity(array), "Количество нечетных элементов массива: 5.");
+            assert.deepEqual(quantity([2, 4, 98, 67, -59, 6, 345, -9, 115]), "Количество нечетных элементов массива: 5.");
         });
         it("array = \"random word\"", function () {
             assert.equal(quantity("random word"), "random word не является массивом");
         });
     });
+    describe("halfReverse", function() {
+        it("array = [1, 2, 3, 4]", function () {
+            assert.deepEqual(halfReverse([1, 2, 3, 4]), [3, 4, 1, 2]);
+        });
+        it("array = \"hello\"", function () {
+            assert.equal(halfReverse("hello"), "hello не является массивом");
+        });
+    });
+
 
 
 
