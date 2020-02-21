@@ -21,11 +21,11 @@ for (let i = 0; i < numbersArr.length; i++) {
 function numberClicked (event) {
     display.value = "0";
     let number = event.target.value;
-    if (isOperatorClicked) {
+    if (!isOperatorClicked) {
         val1 += number;
         display.value = val1;
     }
-    if (!isOperatorClicked) {
+    if (isOperatorClicked) {
         val2 += number;
         display.value = val2;
     }
@@ -38,7 +38,7 @@ for (let i = 0; i < operatorsArr.length; i++) {
 
 function calculation(event) {
     operator = event.target.value;
-    isOperatorClicked = !isOperatorClicked;
+    isOperatorClicked = true;
     isPoint = true;
 
 };
@@ -97,6 +97,7 @@ function clear (event) {
     val2="";
     display.value = "0";
     isPoint = true;
+    isOperatorClicked = false;
 };
 
 let point = document.getElementById("decimal");
