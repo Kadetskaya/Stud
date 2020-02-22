@@ -39,9 +39,9 @@ let numbers = {
   девятьсот: 900
 };
 
-let convert = (num) => {
+let convertToNumbers = (num) => {
   let numArr = num.split(" ");
-  if (numArr.length > 3) {
+  if (numArr.length > 4) {
     return "Число не входит в заданный диапазон 0-999."
     }
     let sum = 0;
@@ -50,4 +50,4 @@ let convert = (num) => {
     }
     return sum;
 };
- console.log(convert(двадцать));
+ console.log(convertToNumbers("двадцать"));

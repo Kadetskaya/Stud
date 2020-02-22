@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <meta charset="UTF-8">
+    <title>Test Mocha</title>
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+</head>
+<body>
+<!-- в элементе с id="mocha" будут результаты тестов -->
+<div id="mocha"></div>
+<!-- запустить тесты! -->
+<script src="./task1.js"></script>
+<script src="./task2.js"></script>
+<script src="./task3.js"></script>
+<script src="./task4.js"></script>
+<script src="./task5.js"></script>
+<script src="./task6.js"></script>
+<script>
+    describe("getDay", function() {
+        it("number = -9", function () {
+            assert.equal(getDay(-9), "Номер дня введен некорректно. Попробуйте число от 1 до 7.");
+        });
+        it("number = 10", function () {
+            assert.equal(getDay(10), "Номер дня введен некорректно. Попробуйте число от 1 до 7.");
+        });
+        it("number = 5", function () {
+            assert.equal(getDay(5), "Fri");
+        });
+    });
+    describe("numbersToLetters", function() {
+        it("enter 0", function () {
+            assert.equal(convertToLetters(0), "ноль");
+        });
+        it("enter -10", function () {
+            assert.equal(convertToLetters(-10), "Число не входит в заданный диапазон 0-999.");
+        });
+        it("enter 1023", function () {
+            assert.equal(convertToLetters(1023), "Число не входит в заданный диапазон 0-999.");
+        });
+        it("enter 23", function () {
+            assert.equal(convertToLetters(23), "двадцать три");
+        });
+        it("enter 563", function () {
+            assert.equal(convert_hundreds(563), "пятьсот шестьдесят три");
+        });
+        it("enter 99", function () {
+            assert.equal(convert_hundreds(99), "девяносто девять");
+        });
+        it("enter 8", function () {
+            assert.equal(convert_tens(8), "восемь");
+        });
+        it("enter 12", function () {
+            assert.equal(convert_tens(12), "двенадцать");
+        });
+        it("enter 35", function () {
+            assert.equal(convert_tens(35), "тридцать пять");
+        });
+    });
+    describe("lettersToNumbers", function() {
+        it("enter сорок восемь", function () {
+            assert.equal(convertToNumbers("сорок восемь"), 48);
+        });
+        it("enter ноль", function () {
+            assert.equal(convertToNumbers("ноль"), 0);
+        });
+        it("enter девятнадцать", function () {
+            assert.equal(convertToNumbers("девятнадцать"), 19);
+        });
+        it("enter восемьсот сорок четыре", function () {
+            assert.equal(convertToNumbers("восемьсот сорок четыре"), 844);
+        });
+        it("enter одна тысяча двести тридцать пять", function () {
+            assert.equal(convertToNumbers("одна тысяча двести тридцать пять"), "Число не входит в заданный диапазон 0-999.");
+        });
+    });
+    describe("getDistance", function () {
+        it("enter x1 = 0, y1 = 0, x2 = 1, y2 = 1", function () {
+            assert.equal(getDistance(0, 0, 1, 1), 1.41);
+        });
+        it("enter x1 = 0, y1 = 0, x2 = 0, y2 = 0", function () {
+            assert.equal(getDistance(0, 0, 0, 0), 0.00);
+        });
+        it("enter x1 = 0, y1 = 0, x2 = -8, y2 = -15", function () {
+            assert.equal(getDistance(0, 0, -8, -15), 17.00);
+        });
+        it("enter x1 = 1, y1 = 1, x2 = 1, y2 = 2", function () {
+            assert.equal(getDistance(1, 1, 1, 2), 1);
+        });
+    });
+    describe("numbersToLetters 0-999bn", function() {
+        it("enter 0", function () {
+            assert.equal(convertToLetters2(0), "zero");
+        });
+        it("enter 56", function () {
+            assert.equal(convert_tens2(56), "fifty six");
+        });
+        it("enter 239", function () {
+            assert.equal(convert_hundreds2(239), "two hundred thirty nine");
+        });
+        it("enter 5423", function () {
+            assert.equal(convert_thousands2(5423), "five thousand four hundred twenty three");
+        });
+        it("enter 5423000", function () {
+            assert.equal(convert_millions2(5423000), "five million four hundred twenty three thousand ");
+        });
+        it("enter 999999000999", function () {
+            assert.equal(convert_billions2(999999000999), "nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine");
+        });
+        it("enter 8", function () {
+            assert.equal(convert_tens2(8), "eight");
+        });
+        it("enter -12", function () {
+            assert.equal(convertToLetters2(-12), "The number is not in the specified range.");
+        });
+        it("enter 10000000000", function () {
+            assert.equal(convertToLetters2(1000000000000), "The number is not in the specified range.");
+        });
+    });
+    describe("lettersToNumbers 0-999bn", function() {
+        it("enter nine hundred ninety nine trillion nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine", function () {
+            assert.equal(convertToNumbers2("nine hundred ninety nine trillion nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine"),
+                "The number is not in the specified range.");
+        });
+        it("enter minus one hundred thousand fifty five", function () {
+            assert.equal(convertToNumbers2("minus one hundred thousand fifty five"), "The number is not in the specified range.");
+        });
+        it("enter zero", function () {
+            assert.equal(convertToNumbers2("zero"), 0);
+        });
+        it("enter five hundred sixty nine billion one million one hundred thousand fifty five", function () {
+            assert.equal(convert_billions3("five hundred sixty nine billion one million one hundred thousand fifty five"),
+                569001100055);
+        });
+        it("enter one billion", function () {
+            assert.equal(convert_billions3("one billion"), 1000000000);
+        });
+        it("enter five hundred thousand sixty seven", function () {
+            assert.equal(convert_thousands3("five hundred thousand sixty seven"), 500067);
+        });
+        it("enter eight hundred fifty five", function () {
+            assert.equal(convert_hundreds3("eight hundred fifty five"), 855);
+        });
+        it("enter twenty four", function () {
+            assert.equal(convert_tens3("twenty four"), 24);
+        });
+        it("enter thirteen", function () {
+            assert.equal(convert_tens3("thirteen"), 13);
+        });
+        it("enter two", function () {
+            assert.equal(convert_tens3("two"), 2);
+        });
+    });
+</script>
+<script>
+    mocha.run();
+</script>
+</body>
+</html>

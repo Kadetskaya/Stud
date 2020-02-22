@@ -54,146 +54,146 @@
 <script src="./functions/task6.js"></script>
 <script>
     describe("c", function() {
-        it("pass a = 6, b = 10", function () {
+        it("enter a = 6, b = 10", function () {
             assert.equal(c(6, 10), 60);
         });
-        it("pass a = 5, b = 10", function () {
+        it("enter a = 5, b = 10", function () {
             assert.equal(c(5, 10), 15);
         });
     });
     describe("whichQuarter", function() {
-        it("pass x = 0, y = 0", function () {
+        it("enter x = 0, y = 0", function () {
             assert.equal(whichQuarter(0, 0), "Точка находится в начале координат.");
         });
-        it("pass x = 0, y = 49", function () {
+        it("enter x = 0, y = 49", function () {
             assert.equal(whichQuarter(0, 49), "Точка находится на оси 'x'.");
         });
-        it("pass x = 105, y = 0", function () {
+        it("enter x = 105, y = 0", function () {
             assert.equal(whichQuarter(105, 0), "Точка находится на оси 'y'.");
         });
-        it("pass x = 105, y = 63", function () {
+        it("enter x = 105, y = 63", function () {
             assert.equal(whichQuarter(105, 63), "Точка находится в I четверти.");
         });
-        it("pass x = -95, y = 16", function () {
+        it("enter x = -95, y = 16", function () {
             assert.equal(whichQuarter(-95, 16), "Точка находится в II четверти.");
         });
-        it("pass x = -95, y = -16", function () {
+        it("enter x = -95, y = -16", function () {
             assert.equal(whichQuarter(-95, -16), "Точка находится в III четверти.");
         });
-        it("pass x = 95, y = -16", function () {
+        it("enter x = 95, y = -16", function () {
             assert.equal(whichQuarter(95, -16), "Точка находится в IV четверти.");
         });
     });
     describe("sum", function() {
-        it("pass a = 3, b = 5, c = -11", function () {
+        it("enter a = 3, b = 5, c = -11", function () {
             assert.equal(sum(3, 5, -11), 8);
         });
-        it("pass a = -3, b = -5, c = -11", function () {
+        it("enter a = -3, b = -5, c = -11", function () {
             assert.equal(sum(-3, -5, -11), "Все числа отрицательные.");
         });
     });
     describe("maxValue", function() {
-        it("pass a = 3, b = 5, c = 6", function () {
+        it("enter a = 3, b = 5, c = 6", function () {
             assert.equal(maxValue(3, 5, 6), 93);
         });
-        it("pass a = 1, b = 2, c = 3", function () {
+        it("enter a = 1, b = 2, c = 3", function () {
             assert.equal(maxValue(1, 2, 3), 9);
         });
     });
     describe("mark", function() {
-        it("pass score = 155", function () {
+        it("enter score = 155", function () {
             assert.equal(mark(155), "Score is out of range.");
         });
-        it("pass score = 15", function () {
+        it("enter score = 15", function () {
             assert.equal(mark(15), "F");
         });
-        it("pass score = 26", function () {
+        it("enter score = 26", function () {
             assert.equal(mark(26), "E");
         });
-        it("pass score = 51", function () {
+        it("enter score = 51", function () {
             assert.equal(mark(51), "D");
         });
-        it("pass score = 69", function () {
+        it("enter score = 69", function () {
             assert.equal(mark(69), "C");
         });
-        it("pass score = 81", function () {
+        it("enter score = 81", function () {
             assert.equal(mark(81), "B");
         });
-        it("pass score = 97", function () {
+        it("enter score = 97", function () {
             assert.equal(mark(97), "A");
         });
     });
     describe("evenNumbers", function() {
-        it("pass a = 1, b = 99", function () {
+        it("enter a = 1, b = 99", function () {
             assert.equal(evenNumbers(1, 99), `Сумма чётных чисел в диапазоне от 1 до 99 равно: 2450, количество: 49.`);
         });
     });
     describe("isPrime", function() {
-        it("pass number = 1", function () {
+        it("enter number = 1", function () {
             assert.equal(isPrime(1), "Число должно быть больше 1.");
         });
-        it("pass number = 2", function () {
+        it("enter number = 2", function () {
             assert.equal(isPrime(2), "2 - простое число.");
         });
-        it("pass number = 56", function () {
+        it("enter number = 56", function () {
             assert.equal(isPrime(56), "56 - составное число.");
         });
-        it("pass number = 23", function () {
+        it("enter number = 23", function () {
             assert.equal(isPrime(23), "23 - простое число.");
         });
     });
     describe("squareRoot1", function() {
-        it("pass number = word", function () {
+        it("enter number = word", function () {
             assert.equal(squareRoot1("word"), "Введите число");
         });
-        it("pass number = 0", function () {
+        it("enter number = 0", function () {
             assert.equal(squareRoot1(0), 0);
         });
-        it("pass number = 1", function () {
+        it("enter number = 1", function () {
             assert.equal(squareRoot1(1), 1);
         });
-        it("pass number = 169", function () {
+        it("enter number = 169", function () {
             assert.equal(squareRoot1(169), 13);
         });
-        it("pass number = 65", function () {
+        it("enter number = 65", function () {
             assert.equal(squareRoot1(65), 8);
         });
     });
     describe("squareRoot2", function() {
-        it("pass number = word", function () {
+        it("enter number = word", function () {
             assert.equal(squareRoot2("word"), "Введите число");
         });
-        it("pass number = 0", function () {
+        it("enter number = 0", function () {
             assert.equal(squareRoot2(0), 0);
         });
-        it("pass number = 1", function () {
+        it("enter number = 1", function () {
             assert.equal(squareRoot2(1), 1);
         });
-        it("pass number = 169", function () {
+        it("enter number = 169", function () {
             assert.equal(squareRoot2(169), 13);
         });
-        it("pass number = 65", function () {
+        it("enter number = 65", function () {
             assert.equal(squareRoot2(65), 8);
         });
     });
     describe("factorial", function() {
-        it("pass n = 10", function () {
+        it("enter n = 10", function () {
             assert.equal(factorial(10), 3628800);
         });
     });
     describe("sum1", function() {
-        it("pass number = 64", function () {
+        it("enter number = 64", function () {
             assert.equal(sum1(64), 10);
         });
-        it("pass number = five", function () {
+        it("enter number = five", function () {
             assert.equal(sum1("five"), "Введите число");
         });
     });
     describe("mirror", function() {
-        it("pass number = '123'", function () {
+        it("enter number = '123'", function () {
             assert.equal(mirror('123'), "Введите число");
         });
-        it("pass number = 123", function () {
+        it("enter number = 123", function () {
             assert.equal(mirror(123), 321);
         });
     });
@@ -261,17 +261,30 @@
             assert.equal(halfReverse("hello"), "hello не является массивом");
         });
     });
-
-
-
-
-
-
-
-
-
-
-
+    describe("bubbleSort", function() {
+        it("array = [3, 1, 4, 2]", function () {
+            assert.deepEqual(bubbleSort([3, 1, 4, 2]), [1, 2, 3, 4]);
+        });
+        it("array = \"hello\"", function () {
+            assert.equal(bubbleSort("hello"), "hello не является массивом");
+        });
+    });
+    describe("selectionSort", function() {
+        it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
+            assert.deepEqual(selectionSort([2, 4, 98, 67, -59, 6, 345, -9, 115]), [-59, -9, 2, 4, 6, 67, 98, 115, 345]);
+        });
+        it("array = 98", function () {
+            assert.equal(selectionSort(98), "98 не является массивом");
+        });
+    });
+    describe("insertionSort", function() {
+        it("array = [2, 4, 98, 67, -59, 6, 345, -9, 115]", function () {
+            assert.deepEqual(insertionSort([2, 4, 98, 67, -59, 6, 345, -9, 115]), [-59, -9, 2, 4, 6, 67, 98, 115, 345]);
+        });
+        it("array = 98", function () {
+            assert.equal(insertionSort(156), "156 не является массивом");
+        });
+    });
     describe("getDay", function() {
         it("number = -9", function () {
             assert.equal(getDay(-9), "Номер дня введен некорректно. Попробуйте число от 1 до 7.");
@@ -281,6 +294,129 @@
         });
         it("number = 5", function () {
             assert.equal(getDay(5), "Fri");
+        });
+    });
+    describe("numbersToLetters", function() {
+        it("enter 0", function () {
+            assert.equal(convertToLetters(0), "ноль");
+        });
+        it("enter -10", function () {
+            assert.equal(convertToLetters(-10), "Число не входит в заданный диапазон 0-999.");
+        });
+        it("enter 1023", function () {
+            assert.equal(convertToLetters(1023), "Число не входит в заданный диапазон 0-999.");
+        });
+        it("enter 23", function () {
+            assert.equal(convertToLetters(23), "двадцать три");
+        });
+        it("enter 563", function () {
+            assert.equal(convert_hundreds(563), "пятьсот шестьдесят три");
+        });
+        it("enter 99", function () {
+            assert.equal(convert_hundreds(99), "девяносто девять");
+        });
+        it("enter 8", function () {
+            assert.equal(convert_tens(8), "восемь");
+        });
+        it("enter 12", function () {
+            assert.equal(convert_tens(12), "двенадцать");
+        });
+        it("enter 35", function () {
+            assert.equal(convert_tens(35), "тридцать пять");
+        });
+    });
+    describe("lettersToNumbers", function() {
+        it("enter сорок восемь", function () {
+            assert.equal(convertToNumbers("сорок восемь"), 48);
+        });
+        it("enter ноль", function () {
+            assert.equal(convertToNumbers("ноль"), 0);
+        });
+        it("enter девятнадцать", function () {
+            assert.equal(convertToNumbers("девятнадцать"), 19);
+        });
+        it("enter восемьсот сорок четыре", function () {
+            assert.equal(convertToNumbers("восемьсот сорок четыре"), 844);
+        });
+        it("enter одна тысяча двести тридцать пять", function () {
+            assert.equal(convertToNumbers("одна тысяча двести тридцать пять"), "Число не входит в заданный диапазон 0-999.");
+        });
+    });
+    describe("getDistance", function () {
+        it("enter x1 = 0, y1 = 0, x2 = 1, y2 = 1", function () {
+            assert.equal(getDistance(0, 0, 1, 1), 1.41);
+        });
+        it("enter x1 = 0, y1 = 0, x2 = 0, y2 = 0", function () {
+            assert.equal(getDistance(0, 0, 0, 0), 0.00);
+        });
+        it("enter x1 = 0, y1 = 0, x2 = -8, y2 = -15", function () {
+            assert.equal(getDistance(0, 0, -8, -15), 17.00);
+        });
+        it("enter x1 = 1, y1 = 1, x2 = 1, y2 = 2", function () {
+            assert.equal(getDistance(1, 1, 1, 2), 1);
+        });
+    });
+    describe("numbersToLetters 0-999bn", function() {
+        it("enter 0", function () {
+            assert.equal(convertToLetters2(0), "zero");
+        });
+        it("enter 56", function () {
+            assert.equal(convert_tens2(56), "fifty six");
+        });
+        it("enter 239", function () {
+            assert.equal(convert_hundreds2(239), "two hundred thirty nine");
+        });
+        it("enter 5423", function () {
+            assert.equal(convert_thousands2(5423), "five thousand four hundred twenty three");
+        });
+        it("enter 5423000", function () {
+            assert.equal(convert_millions2(5423000), "five million four hundred twenty three thousand ");
+        });
+        it("enter 999999000999", function () {
+            assert.equal(convert_billions2(999999000999), "nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine");
+        });
+        it("enter 8", function () {
+            assert.equal(convert_tens2(8), "eight");
+        });
+        it("enter -12", function () {
+            assert.equal(convertToLetters2(-12), "The number is not in the specified range.");
+        });
+        it("enter 10000000000", function () {
+            assert.equal(convertToLetters2(1000000000000), "The number is not in the specified range.");
+        });
+    });
+    describe("lettersToNumbers 0-999bn", function() {
+        it("enter nine hundred ninety nine trillion nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine", function () {
+            assert.equal(convertToNumbers2("nine hundred ninety nine trillion nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine"),
+                "The number is not in the specified range.");
+        });
+        it("enter minus one hundred thousand fifty five", function () {
+            assert.equal(convertToNumbers2("minus one hundred thousand fifty five"), "The number is not in the specified range.");
+        });
+        it("enter zero", function () {
+            assert.equal(convertToNumbers2("zero"), 0);
+        });
+        it("enter five hundred sixty nine billion one million one hundred thousand fifty five", function () {
+            assert.equal(convert_billions3("five hundred sixty nine billion one million one hundred thousand fifty five"),
+                569001100055);
+        });
+        it("enter one billion", function () {
+            assert.equal(convert_billions3("one billion"), 1000000000);
+        });
+        it("enter five hundred thousand sixty seven", function () {
+            assert.equal(convert_thousands3("five hundred thousand sixty seven"), 500067);
+        });
+        it("enter eight hundred fifty five", function () {
+            assert.equal(convert_hundreds3("eight hundred fifty five"), 855);
+        });
+        it("enter twenty four", function () {
+            assert.equal(convert_tens3("twenty four"), 24);
+        });
+        it("enter thirteen", function () {
+            assert.equal(convert_tens3("thirteen"), 13);
+        });
+        it("enter two", function () {
+            assert.equal(convert_tens3("two"), 2);
         });
     });
 </script>

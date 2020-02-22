@@ -22,12 +22,11 @@ let convert_tens = (num) => {
   }
 };
 
-let convert = (num) => {
+let convertToLetters = (num) => {
   if (num == 0) return "ноль";
   if (num < 0 || num > 999) return "Число не входит в заданный диапазон 0-999.";
   else return convert_hundreds(num);
 };
 
-//console.log(convert(num));
+console.log(convertToLetters(54));
 
-console.log(typeof('5'));

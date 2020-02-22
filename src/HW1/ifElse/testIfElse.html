@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <meta charset="UTF-8">
+    <title>Test Mocha</title>
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+</head>
+<body>
+<!-- в элементе с id="mocha" будут результаты тестов -->
+<div id="mocha"></div>
+<!-- запустить тесты! -->
+<script src="./task1.js"></script>
+<script src="./task2.js"></script>
+<script src="./task3.js"></script>
+<script src="./task4.js"></script>
+<script src="./task5.js"></script>
+<script>
+    describe("c", function() {
+        it("enter a = 6, b = 10", function () {
+            assert.equal(c(6, 10), 60);
+        });
+        it("enter a = 5, b = 10", function () {
+            assert.equal(c(5, 10), 15);
+        });
+    });
+    describe("whichQuarter", function() {
+        it("enter x = 0, y = 0", function () {
+            assert.equal(whichQuarter(0, 0), "Точка находится в начале координат.");
+        });
+        it("enter x = 0, y = 49", function () {
+            assert.equal(whichQuarter(0, 49), "Точка находится на оси 'x'.");
+        });
+        it("enter x = 105, y = 0", function () {
+            assert.equal(whichQuarter(105, 0), "Точка находится на оси 'y'.");
+        });
+        it("enter x = 105, y = 63", function () {
+            assert.equal(whichQuarter(105, 63), "Точка находится в I четверти.");
+        });
+        it("enter x = -95, y = 16", function () {
+            assert.equal(whichQuarter(-95, 16), "Точка находится в II четверти.");
+        });
+        it("enter x = -95, y = -16", function () {
+            assert.equal(whichQuarter(-95, -16), "Точка находится в III четверти.");
+        });
+        it("enter x = 95, y = -16", function () {
+            assert.equal(whichQuarter(95, -16), "Точка находится в IV четверти.");
+        });
+    });
+    describe("sum", function() {
+        it("enter a = 3, b = 5, c = -11", function () {
+            assert.equal(sum(3, 5, -11), 8);
+        });
+        it("enter a = -3, b = -5, c = -11", function () {
+            assert.equal(sum(-3, -5, -11), "Все числа отрицательные.");
+        });
+    });
+    describe("maxValue", function() {
+        it("enter a = 3, b = 5, c = 6", function () {
+            assert.equal(maxValue(3, 5, 6), 93);
+        });
+        it("enter a = 1, b = 2, c = 3", function () {
+            assert.equal(maxValue(1, 2, 3), 9);
+        });
+    });
+    describe("mark", function() {
+        it("enter score = 155", function () {
+            assert.equal(mark(155), "Score is out of range.");
+        });
+        it("enter score = 15", function () {
+            assert.equal(mark(15), "F");
+        });
+        it("enter score = 26", function () {
+            assert.equal(mark(26), "E");
+        });
+        it("enter score = 51", function () {
+            assert.equal(mark(51), "D");
+        });
+        it("enter score = 69", function () {
+            assert.equal(mark(69), "C");
+        });
+        it("enter score = 81", function () {
+            assert.equal(mark(81), "B");
+        });
+        it("enter score = 97", function () {
+            assert.equal(mark(97), "A");
+        });
+    });
+</script>
+<script>
+    mocha.run();
+</script>
+</body>
+</html>

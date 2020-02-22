@@ -1,5 +1,5 @@
 "use strict";
-let numbers = {
+let numbers2 = {
 	zero: 0, 
 	one: 1, 
 	two: 2, 
@@ -30,66 +30,94 @@ let numbers = {
 	ninety: 90
 };
 
-let convert_billions = (num) => {	
+let convert_billions3 = (num) => {
+	let a, b;
+	let numArr = num.split(" ");
+	for (let i = 0; i < numArr.length; i++) {
+	    if (numArr[i] == "minus") {
+            return "The number is not in the specified range."
+        }
+		if (numArr[i] == "billion") {
+            a = numArr.slice(0, numArr.indexOf("billion"));
+            if (i != numArr.length - 1) {
+                b = numArr.slice(numArr.indexOf("billion") + 1);
+                return convert_hundreds3(a.join(" ")) * 1000000000 + convert_millions3(b.join(" "));
+            }
+            return convert_hundreds3(a.join(" ")) * 1000000000;
+        }
+    }
+    return convert_millions3(num);
+};
+
+let convert_millions3 = (num) => {
 	let a, b;
 	let numArr = num.split(" ");
 	for (let i = 0; i < numArr.length; i++) {
 		if (numArr[i] == "million") {
-			a = numArr.slice(0, numArr.indexOf("billion"));
-			b = numArr.slice(numArr.indexOf("billion")+1);
-			return convert_hundreds(a.join(" ")) * 1000000000 + convert_millions(b.join(" "));
+            a = numArr.slice(0, i);
+            if (i != numArr.length - 1) {
+                b = numArr.slice(i + 1);
+                return convert_hundreds3(a.join(" ")) * 1000000 + convert_thousands3(b.join(" "));
+            }
+            return convert_hundreds3(a.join(" ")) * 1000000;
         }
-        return convert_millions(num);
     }
+    return convert_thousands3(num);
 };
 
-let convert_millions = (num) => {	
-	let a, b;
-	let numArr = num.split(" ");
-	for (let i = 0; i < numArr.length; i++) {
-		if (numArr[i] == "million") {
-			a = numArr.slice(0, numArr.indexOf("million"));
-			b = numArr.slice(numArr.indexOf("million")+1);
-			return convert_hundreds(a.join(" ")) * 1000000 + convert_thousands(b.join(" "));
-        }
-        return convert_thousands(num);
-    }
-};
-
-let convert_thousands = (num) => {	
+let convert_thousands3 = (num) => {
 	let a, b;
 	let numArr = num.split(" ");
 	for (let i = 0; i < numArr.length; i++) {
 		if (numArr[i] == "thousand") {
-			a = numArr.slice(0, numArr.indexOf("thousand"));
-			b = numArr.slice(numArr.indexOf("thousand")+1);
-			return convert_hundreds(a.join(" ")) * 1000 + convert_hundreds(b.join(" "));
+			a = numArr.slice(0, i);
+            if (i != numArr.length - 1) {
+                b = numArr.slice(i + 1);
+                return convert_hundreds3(a.join(" ")) * 1000 + convert_hundreds3(b.join(" "));
+            }
+            return convert_hundreds3(a.join(" ")) * 1000;
         }
-        return convert_hundreds(num);
     }
+    return convert_hundreds3(num);
 };
 
-let convert_hundreds = (num) => {	
+let convert_hundreds3 = (num) => {
 	let a, b;
 	let numArr = num.split(" ");
 	for (let i = 0; i < numArr.length; i++) {
 		if (numArr[i] == "hundred") {
-			a = numArr.slice(0, numArr.indexOf("hundred"));
-			b = numArr.slice(numArr.indexOf("hundred")+1);
-			return convert_tens(a.join(" ")) * 100 + convert_tens(b.join(" "));
-        } 
-        return convert_tens(num);
+			a = numArr.slice(0, i);
+			if (i != numArr.length - 1) {
+                b = numArr.slice(i + 1);
+                return convert_tens3(a.join(" ")) * 100 + convert_tens3(b.join(" "));
+            }
+            return convert_tens3(a.join(" ")) * 100;
+        }
     }
+    return convert_tens3(num);
 };
 
 
-let convert_tens = (num) => {
+let convert_tens3 = (num) => {
 	let numArr = num.split(" ");
     let sum = 0;
     for (let i = 0; i < numArr.length; i++) {
-    	sum += numbers[numArr[i]];
+    	sum += numbers2[numArr[i]];
     }
     return sum;
 };
 
-console.log(convert_millions(num)); 
+let convertToNumbers2 = (num) => {
+    let numArr = num.split(" ");
+    if (numArr.length > 19) {
+        return "The number is not in the specified range.";
+    }
+    return convert_billions3(num);
+};
+
+console.log(convertToNumbers2("zero"));
+console.log(convertToNumbers2("one hundred thousand fifty five"));
+console.log(convertToNumbers2("minus one hundred thousand fifty five"));
+console.log(convertToNumbers2("one million one hundred thousand fifty five"));
+console.log(convertToNumbers2("five hundred sixty nine billion one million one hundred thousand fifty five"));
+console.log(convertToNumbers2("nine hundred ninety nine trillion nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine"));

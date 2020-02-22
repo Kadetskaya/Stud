@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <meta charset="UTF-8">
+    <title>Test Mocha</title>
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+</head>
+<body>
+<!-- в элементе с id="mocha" будут результаты тестов -->
+<div id="mocha"></div>
+<!-- запустить тесты! -->
+<script src="./task1.js"></script>
+<script src="./task2.js"></script>
+<script src="./task3.js"></script>
+<script src="./task4.js"></script>
+<script src="./task5.js"></script>
+<script src="./task6.js"></script>
+<script>
+    describe("evenNumbers", function() {
+        it("enter a = 1, b = 99", function () {
+            assert.equal(evenNumbers(1, 99), `Сумма чётных чисел в диапазоне от 1 до 99 равно: 2450, количество: 49.`);
+        });
+    });
+    describe("isPrime", function() {
+        it("enter number = 1", function () {
+            assert.equal(isPrime(1), "Число должно быть больше 1.");
+        });
+        it("enter number = 2", function () {
+            assert.equal(isPrime(2), "2 - простое число.");
+        });
+        it("enter number = 56", function () {
+            assert.equal(isPrime(56), "56 - составное число.");
+        });
+        it("enter number = 23", function () {
+            assert.equal(isPrime(23), "23 - простое число.");
+        });
+    });
+    describe("squareRoot1", function() {
+        it("enter number = word", function () {
+            assert.equal(squareRoot1("word"), "Введите число");
+        });
+        it("enter number = 0", function () {
+            assert.equal(squareRoot1(0), 0);
+        });
+        it("enter number = 1", function () {
+            assert.equal(squareRoot1(1), 1);
+        });
+        it("enter number = 169", function () {
+            assert.equal(squareRoot1(169), 13);
+        });
+        it("enter number = 65", function () {
+            assert.equal(squareRoot1(65), 8);
+        });
+    });
+    describe("squareRoot2", function() {
+        it("enter number = word", function () {
+            assert.equal(squareRoot2("word"), "Введите число");
+        });
+        it("enter number = 0", function () {
+            assert.equal(squareRoot2(0), 0);
+        });
+        it("enter number = 1", function () {
+            assert.equal(squareRoot2(1), 1);
+        });
+        it("enter number = 169", function () {
+            assert.equal(squareRoot2(169), 13);
+        });
+        it("enter number = 65", function () {
+            assert.equal(squareRoot2(65), 8);
+        });
+    });
+    describe("factorial", function() {
+        it("enter n = 10", function () {
+            assert.equal(factorial(10), 3628800);
+        });
+    });
+    describe("sum1", function() {
+        it("enter number = 64", function () {
+            assert.equal(sum1(64), 10);
+        });
+        it("enter number = five", function () {
+            assert.equal(sum1("five"), "Введите число");
+        });
+    });
+    describe("mirror", function() {
+        it("enter number = '123'", function () {
+            assert.equal(mirror('123'), "Введите число");
+        });
+        it("enter number = 123", function () {
+            assert.equal(mirror(123), 321);
+        });
+    });
+</script>
+<script>
+    mocha.run();
+</script>
+</body>
+</html>

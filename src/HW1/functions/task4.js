@@ -1,11 +1,9 @@
 "use strict";
-let point1 = {x: 12, y: 24};
-let point2 = {x: 33, y: 45};
+function getDistance(x1, y1, x2, y2) {
+	let i = Math.pow((x2 - x1), 2);
+	let j = Math.pow((y2 - y1), 2);
+	let result = (Math.sqrt(i + j));
+	return result.toFixed(2);
+};
 
-let getDistance = (point1, point2) => {
-	let diffX = point1.x - point2.x;
-	let diffY = point2.y - point2.y;
-	return Math.sqrt((diffX * diffX) + (diffY * diffY));
-}
-
-console.log (getDistance(point1, point2)); 
+console.log(getDistance(1, 4, 10, 2));
