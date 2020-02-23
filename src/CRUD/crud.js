@@ -5,7 +5,23 @@ let firstName = document.getElementById("firstName");
 let lastName = document.getElementById("lastName");
 let age = document.getElementById("age");
 
+id.addEventListener("change", validationId);
+function validationId () {
+    let regex= /\D/g;
+    if(regex.test(this.value)) {
+        id.value = "";
+        alert("Введите ID цифрами!")
+    }
+}
 
+age.addEventListener("change", validationAge);
+function validationAge () {
+    let regex = /\D/g;
+    if(regex.test(this.value)) {
+        age.value = "";
+        alert("Введите возраст цифрами!")
+    }
+}
 
 let create = document.getElementById("create");
 create.addEventListener("click", getData);
