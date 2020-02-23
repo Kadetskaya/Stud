@@ -87,7 +87,7 @@ function calc (event) {
     }
     val1 = result;
     val2 = "";
-    isOperatorClicked;
+    isOperatorClicked = false;
 };
 
 del.addEventListener("click", clear);
