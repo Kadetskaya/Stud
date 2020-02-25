@@ -209,36 +209,3 @@ AList.prototype.halfReverse = function () {
     this.array = arr;
 };
 
-
-const testArr = new AList ([5, 10, 11, 12, 15, 20]);
-//console.log(testArr);
-//console.log(testArr.size());
-//console.log(testArr.addStart(59));
-//console.log(testArr.addStart(115));
-//console.log(testArr.addStart(27));
-//console.log(testArr.addEnd(45));
-//console.log(testArr.addEnd(36));
-//console.log(testArr.addEnd(245));
-//console.log(testArr.delStart());
-//console.log(testArr.delEnd());
-//console.log(testArr.delPosition(3));
-//console.log(testArr.getIndex(10));
-//console.log(testArr.getIndex(4));
-//console.log(testArr.setIndex(4, 989));
-//console.log(testArr.setIndex(15, 989));
-//console.log(testArr.toString());
-//console.log(testArr.clear());
-//console.log(testArr.min());
-//console.log(testArr.max());
-//console.log(testArr.sort());
-//console.log(testArr);
-//console.log(testArr.minIndex());
-//console.log(testArr.maxIndex());*/
-//console.log(testArr);
-console.log(testArr.reverse());
-console.log(testArr);
-//console.log(testArr.halfReverse());
-//console.log(testArr);
-//console.log(testArr.delPosition(3));
-//console.log(testArr);
-//console.log(testArr.addEnd(59));
