@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index tests</title>
-    <script src="AList.js"></script>
+    <title>Test</title>
     <!-- подключаем стили Mocha, для отображения результатов -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
     <!-- подключаем библиотеку Mocha -->
@@ -19,6 +18,9 @@
     <script>
         var assert = chai.assert;
     </script>
+
+    <script src="AList.js"></script>
+
 </head>
 <body>
 <!-- в элементе с id="mocha" будут результаты тестов -->
@@ -36,6 +38,7 @@
         it('add 56', function () {
             assert.deepEqual(testArray.addStart(56), 8);
             assert.deepEqual(testArray.get(0), 56);
+            assert.deepEqual(testArray.array, [56, 5, 10, 11, 12, 15, 20, 123]);
         })
     });
     describe('addEnd', function () {
@@ -43,6 +46,7 @@
         it('add 234', function () {
             assert.deepEqual(testArray.addEnd(234), 8);
             assert.deepEqual(testArray.get(7), 234);
+            assert.deepEqual(testArray.array, [5, 10, 11, 12, 15, 20, 123, 234]);
         })
     });
     describe('delStart', function () {
@@ -51,6 +55,7 @@
             testArray.delStart();
             assert.deepEqual(testArray.size(), 6);
             assert.deepEqual(testArray.get(0), 10);
+            assert.deepEqual(testArray.array, [10, 11, 12, 15, 20, 123]);
         })
     });
     describe('delEnd', function () {
@@ -58,12 +63,14 @@
         it('delEnd is done', function () {
             testArray.delEnd();
             assert.deepEqual(testArray.size(), 6);
+            assert.deepEqual(testArray.array, [5, 10, 11, 12, 15, 20]);
         })
     });
     describe('delPosition', function () {
         const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
         it('delPosition  is done', function () {
             assert.deepEqual(testArray.delPosition(4), 15);
+            assert.deepEqual(testArray.array, [5, 10, 11, 12, 20, 123]);
         })
     });
     describe('get', function () {
@@ -99,6 +106,7 @@
             testArray.clear();
             assert.deepEqual(testArray.get(0), 5);
             assert.deepEqual(testArray.size(), 7);
+            assert.deepEqual(testArray.array, [5, 10, 11, 12, 15, 20, 123]);
         })
     });
     describe('getMinEl', function () {
@@ -118,12 +126,10 @@
         it('sort is done', function () {
             testArray.sort();
             assert.deepEqual(testArray.get(0), 5);
-            assert.deepEqual(testArray.get(1), 10);
-            assert.deepEqual(testArray.get(2), 11);
             assert.deepEqual(testArray.get(3), 12);
             assert.deepEqual(testArray.get(4), 15);
-            assert.deepEqual(testArray.get(5), 20);
             assert.deepEqual(testArray.get(6), 123);
+            assert.deepEqual(testArray.array, [5, 10, 11, 12, 15, 20, 123]);
         })
     });
     describe('getIndexOfMin', function () {
@@ -146,6 +152,7 @@
             assert.deepEqual(testArray.get(3), 12);
             assert.deepEqual(testArray.get(4), 11);
             assert.deepEqual(testArray.get(6), 5);
+            assert.deepEqual(testArray.array, [123, 20, 15, 12, 11, 10, 5]);
         })
     });
     describe('halfReverse', function () {
@@ -153,12 +160,10 @@
         it('halfReverse is done', function () {
             testArray.halfReverse();
             assert.deepEqual(testArray.get(0), 11);
-            assert.deepEqual(testArray.get(1), 10);
             assert.deepEqual(testArray.get(2), 5);
             assert.deepEqual(testArray.get(3), 12);
-            assert.deepEqual(testArray.get(4), 123);
-            assert.deepEqual(testArray.get(5), 20);
             assert.deepEqual(testArray.get(6), 15);
+            assert.deepEqual(testArray.array, [11, 10, 5, 12, 123, 20, 15]);
         })
     });
 </script>
