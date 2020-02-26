@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./calcStyle.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <input id="display" type="text" readonly value="0">
+    </div>
+    <div class="table">
+        <input id="del" type="button" value="AC">
+        <input class="operator" type="button" value="/">
+    </div>
+    <div class="row">
+        <input class="number" type="button" value="7">
+        <input class="number" type="button" value="8">
+        <input class="number" type="button" value="9">
+        <input class="operator" type="button" value="x">
+    </div>
+    <div class="row">
+        <input class="number" type="button" value="4">
+        <input class="number" type="button" value="5">
+        <input class="number" type="button" value="6">
+        <input class="operator" type="button" value="-">
+    </div>
+    <div class="row">
+        <input class="number" type="button" value="1">
+        <input class="number" type="button" value="2">
+        <input class="number" type="button" value="3">
+        <input class="operator" type="button" value="+">
+    </div>
+    <div class="row">
+        <input id="zero" class="number" type="button" value="0">
+        <input class="number" id="decimal" type="button" value=".">
+        <input id="equal" type="button" value="=">
+    </div>
+</div>
+<script src="./calcLogic.js"></script>
+</body>
+</html>
