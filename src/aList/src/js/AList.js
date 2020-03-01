@@ -60,7 +60,7 @@ AList.prototype.delEnd = function () {
     return deletedEl;
 };
 
-AList.prototype.delPosition = function (index) {
+AList.prototype.delPos = function (index) {
     let arr = [];
     let deletedEl = this.array[index];
     let j = 0;
@@ -209,3 +209,4 @@ AList.prototype.halfReverse = function () {
     this.array = arr;
 };
 
+module.exports.AList = AList;
