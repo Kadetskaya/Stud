@@ -64,7 +64,7 @@ function getData(event) {
         alert(`Пользователь с ID ${id.value} уже существует!`);
         return;
     }
-    if (id.value == 0 || firstName.value == 0 || lastName.value == 0 || age.value == 0) {
+    if (id.value === 0 || firstName.value === 0 || lastName.value === 0 || age.value === 0) {
         alert("Заполните все поля!");
         return;
     }
@@ -110,7 +110,7 @@ function readData (event) {
 };
 
 function updateRow (event) {
-    if (id.value == 0 || firstName.value == 0 || lastName.value == 0 || age.value == 0) {
+    if (id.value === 0 || firstName.value === 0 || lastName.value === 0 || age.value === 0) {
         alert("Заполните все поля!");
         return;
     }

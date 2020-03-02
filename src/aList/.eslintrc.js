@@ -70,5 +70,7 @@ module.exports = {
       "import/no-extraneous-dependencies": "warn",
       "import/no-cycle": "warn",
       "no-bitwise": "warn",
+      "no-undef": "warn",
+      "no-plusplus": "warn"
     },
   };
