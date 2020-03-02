@@ -5,18 +5,14 @@ let operatorsArr = document.getElementsByClassName("operator");
 let del = document.getElementById("del");
 let equal = document.getElementById("equal");
 let display = document.getElementById("display");
-//console.log(display);
-//display.value = 348;
+let point = document.getElementById("decimal");
+
 let val1 = "";
 let val2 = "";
 
 let isOperatorClicked = false;
 let operator = "";
 let isPoint = true;
-
-for (let i = 0; i < numbersArr.length; i++) {
-    numbersArr[i].addEventListener("click", numberClicked);
-};
 
 function numberClicked (event) {
     display.value = "0";
@@ -31,16 +27,10 @@ function numberClicked (event) {
     }
 };
 
-
-for (let i = 0; i < operatorsArr.length; i++) {
-    operatorsArr[i].addEventListener("click", calculation);
-};
-
 function calculation(event) {
     operator = event.target.value;
     isOperatorClicked = true;
     isPoint = true;
-
 };
 
 function add (val1, val2) {
@@ -62,8 +52,6 @@ function divide (val1, val2) {
     }
     return val1 / val2;
 };
-
-equal.addEventListener("click", calc);
 
 function calc (event) {
     let result = "";
@@ -90,8 +78,6 @@ function calc (event) {
     isOperatorClicked = false;
 };
 
-del.addEventListener("click", clear);
-
 function clear (event) {
     val1="";
     val2="";
@@ -100,14 +86,21 @@ function clear (event) {
     isOperatorClicked = false;
 };
 
-let point = document.getElementById("decimal");
-point.addEventListener("click", decimal);
-
 function decimal (event) {
     if (isPoint) {
         display.value += ".";
         isPoint = false;
     }
-}
+};
 
+for (let i = 0; i < numbersArr.length; i++) {
+    numbersArr[i].addEventListener("click", numberClicked);
+};
 
+for (let i = 0; i < operatorsArr.length; i++) {
+    operatorsArr[i].addEventListener("click", calculation);
+};
+
+equal.addEventListener("click", calc);
+del.addEventListener("click", clear);
+point.addEventListener("click", decimal);
