@@ -7,25 +7,25 @@ let age = document.getElementById("age");
 
 let state = [];
 
-function validationId () {
-    if(isNaN(id.value)) {
+function validationId() {
+    if (isNaN(id.value)) {
         id.value = "";
-        alert("Введите ID цифрами!")
+        alert("The ID must be a number!")
     }
 };
 
-function validationAge () {
-    if(isNaN(age.value)) {
+function validationAge() {
+    if (isNaN(age.value)) {
         age.value = "";
-        alert("Введите возраст цифрами!")
+        alert("The age must be a number!")
     }
 };
 
-function updateLocalStorage () {
+function updateLocalStorage() {
     localStorage.setItem("personState", JSON.stringify(state));
 };
 
-function clear () {
+function clear() {
     id.value = "";
     firstName.value = "";
     lastName.value = "";
@@ -61,14 +61,15 @@ function createRow() {
 function getData(event) {
     let el = document.getElementById(id.value);
     if (el) {
-        alert(`Пользователь с ID ${id.value} уже существует!`);
+        alert(`The person with the ID ${id.value} has been already created!`);
         return;
     }
     if (id.value === 0 || firstName.value === 0 || lastName.value === 0 || age.value === 0) {
-        alert("Заполните все поля!");
+        alert("Fill all of the fields, please!");
         return;
     }
-    state.push({id: id.value,
+    state.push({
+        id: id.value,
         firstName: firstName.value,
         lastName: lastName.value,
         age: age.value
@@ -77,7 +78,7 @@ function getData(event) {
     updateLocalStorage();
 };
 
-function readData (event) {
+function readData(event) {
     let localStor = localStorage.getItem("personState");
     if (localStor != null) {
         state = JSON.parse(localStor);
@@ -109,9 +110,9 @@ function readData (event) {
     }
 };
 
-function updateRow (event) {
+function updateRow(event) {
     if (id.value === 0 || firstName.value === 0 || lastName.value === 0 || age.value === 0) {
-        alert("Заполните все поля!");
+        alert("Fill all of the fields, please!");
         return;
     }
     let i = state.findIndex(element => element.id === id.value);
@@ -132,14 +133,14 @@ function updateRow (event) {
         td4.innerHTML = age.value;
         clear();
         return;
-    } else if (confirm(`Пользователя с ID ${id.value} нет в списке! Создать?`)) {
+    } else if (confirm(`The person with the ID ${id.value} is not in the list! Do you want to create?`)) {
         return createRow();
     }
     clear();
 };
 
-function deleteRow (event) {
-    if (confirm(`Вы уверенны, что хотите удалить пользователя с ID ${id.value}?`)) {
+function deleteRow(event) {
+    if (confirm(`Are you sure that you want to delete the person with ID ${id.value}?`)) {
         let el = document.getElementById(id.value);
         el.remove();
         let i = data.findIndex(element => element.id === id.value);
