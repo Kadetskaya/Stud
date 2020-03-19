@@ -1,20 +1,243 @@
-*{
+*,
+*::after,
+*::before{
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-.table{
-  display: table;
-  width: 70%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-.row{
-  display: table-row;
+
+.input-container{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
 
 }
-.row div {
-  display: table-cell;
+
+.input-workspace__title{
+  font-family: 'Fredoka One', cursive;
   text-align: center;
-  border: none;
-  border: 1px solid #ccc;
-  vertical-align: middle;
+  font-size: 42px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
+
+.store-block{
+  width: 150px;
+  margin-right: 50px;
+  display: block;
+}
+
+.label__radiobutton{
+  display: block;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.label__radiobutton:first-child{
+  margin-bottom: 15px;
+}
+
+.radioBtn {
+  display: none;
+}
+
+.fake {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #cfcfcf;
+  position: relative;
+  border-radius: 50%;
+
+}
+
+.fake::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  opacity: 0;
+  transition: 0.8s;
+  border-radius: 50%;
+}
+
+.radioBtn:checked + .fake::before {
+  opacity: 1;
+}
+
+.radioBtn:checked + .fake {
+  background-color: darkmagenta;
+}
+
+.input-block{
+  max-width: 1000px;
+}
+
+.input-row{
+  max-width: inherit;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.input__description{
+  width: 300px;
+  text-align: center;
+}
+
+.input{
+  width: 300px;
+  height: 35px;
+  padding: 10px;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: 2px solid #020202;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  border-radius: 5px;
+
+}
+
+.workspace{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.span{
+  font-size: 20px;
+}
+
+.button{
+  width: 300px;
+  height: 45px;
+  border-radius: 5px;
+  transition: 1s;
+  border: none;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.create {
+  background-color: #3AA953;
+  color: #fff6fc;
+}
+
+.create:hover {
+  background-color: #107000;
+  border-radius: 20px;
+}
+
+.update {
+  background-color: #FDC02E;
+}
+
+.update:hover {
+  background-color: #ff8100;
+  border-radius: 20px;
+}
+
+.delete {
+  background-color: #D93749;
+  color: #fff6fc;
+}
+
+.delete:hover {
+  background-color: #ff0000;
+  border-radius: 20px;
+}
+
+.button:hover{
+  border-radius: 20px;
+}
+
+.button-row{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: inherit;
+}
+
+.table-title{
+  max-width: 1500px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+}
+
+.table-container{
+  max-width: 1500px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+}
+.table-item{
+  border-bottom: 2px solid #DEE2E6;
+  display: flex;
+  justify-content: space-around;
+}
+
+.table-item:first-child{
+  border-top: 2px solid #DEE2E6;
+}
+
+.item{
+  width: 200px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  display: inline-block;
+}
+
+
+
+.input-id {
+  color: red;
+}
+
+.input-firstName {
+  color: orange;
+}
+
+.input-lastName {
+  color: deeppink;
+}
+
+.input-age {
+  color: green;
+}
+
+.input-email {
+  color: blue;
+}
+
+.input-phone {
+  color: violet;
+}
+
+@media screen and (min-width: 0) and (max-width: 1100px) {
+  .workspace{
+    display: block;
+    margin: auto;
+  }
+
+  .store-block{
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}
+
+
+
+
