@@ -6,6 +6,7 @@ describe('findSizeOfArray', function() {
     assert.deepEqual(testArray.size(testArray), 7);
   });
 });
+
 describe('addStart', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('add 56', function() {
@@ -14,6 +15,7 @@ describe('addStart', function() {
     assert.deepEqual(testArray.array, [56, 5, 10, 11, 12, 15, 20, 123]);
   });
 });
+
 describe('addEnd', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('add 234', function() {
@@ -22,6 +24,7 @@ describe('addEnd', function() {
     assert.deepEqual(testArray.array, [5, 10, 11, 12, 15, 20, 123, 234]);
   });
 });
+
 describe('delStart', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('delStart is done', function() {
@@ -31,6 +34,7 @@ describe('delStart', function() {
     assert.deepEqual(testArray.array, [10, 11, 12, 15, 20, 123]);
   });
 });
+
 describe('delEnd', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('delEnd is done', function() {
@@ -39,6 +43,7 @@ describe('delEnd', function() {
     assert.deepEqual(testArray.array, [5, 10, 11, 12, 15, 20]);
   });
 });
+
 describe('delPos', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('delPos  is done', function() {
@@ -46,15 +51,17 @@ describe('delPos', function() {
     assert.deepEqual(testArray.array, [5, 10, 11, 12, 20, 123]);
   });
 });
+
 describe('get', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('index = 3', function() {
     assert.deepEqual(testArray.get(3), 12);
   });
   it('index = 10', function() {
-    assert.equal(testArray.get(10), undefined);
+    assert.equal(testArray.get(10), 'Error! Index 10 is not in range');
   });
 });
+
 describe('set', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('index = 5, value = 99', function() {
@@ -65,12 +72,14 @@ describe('set', function() {
     assert.deepEqual(testArray.set(7, 99), `Error! Index 7 is not available`);
   });
 });
+
 describe('toStringTest', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('toString is done', function() {
     assert.deepEqual(testArray.toString(), '51011121520123');
   });
 });
+
 describe('clear', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('clear is done', function() {
@@ -82,18 +91,21 @@ describe('clear', function() {
     assert.deepEqual(testArray.array, [5, 10, 11, 12, 15, 20, 123]);
   });
 });
+
 describe('getMinEl', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('getMinEl', function() {
     assert.deepEqual(testArray.min(), 5);
   });
 });
+
 describe('getMaxEl', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('getMaxEl', function() {
     assert.deepEqual(testArray.max(), 123);
   });
 });
+
 describe('sort', function() {
   const testArray = new AList([11, 15, 10, 123, 20, 5, 12]);
   it('sort is done', function() {
@@ -105,18 +117,21 @@ describe('sort', function() {
     assert.deepEqual(testArray.array, [5, 10, 11, 12, 15, 20, 123]);
   });
 });
+
 describe('getIndexOfMin', function() {
   const testArray = new AList([11, 15, 10, 123, 20, 5, 12]);
   it('minIndex is got', function() {
     assert.deepEqual(testArray.minIndex(), 5);
   });
 });
+
 describe('getIndexOfMax', function() {
   const testArray = new AList([11, 15, 10, 123, 20, 5, 12]);
   it('maxIndex is got', function() {
     assert.deepEqual(testArray.maxIndex(), 3);
   });
 });
+
 describe('reverse', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('reverse is done', function() {
@@ -128,6 +143,7 @@ describe('reverse', function() {
     assert.deepEqual(testArray.array, [123, 20, 15, 12, 11, 10, 5]);
   });
 });
+
 describe('halfReverse', function() {
   const testArray = new AList([5, 10, 11, 12, 15, 20, 123]);
   it('halfReverse is done', function() {
